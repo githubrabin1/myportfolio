@@ -1,3 +1,4 @@
+<?php include 'form.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,7 +81,8 @@
             </div>
             <div class="text-container">
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quaerat impedit praesentium pariatur, eum, debitis culpa esse itaque in accusantium ipsa voluptatibus laudantium porro ad consequuntur ipsam. Hic, repellendus temporibus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid odio nulla nostrum esse vitae officia, rem ipsum nobis ullam accusamus corporis culpa sed magnam, qui, delectus deleniti nihil tempora expedita!</br>
+              Hello! I’m Rabin, a passionate student eager to learn and explore various programming languages such as HTML, CSS , javascript and Git. I enjoy solving problems and gradually building my skills by working on projects that help me understand both front-end and back-end development. With a strong curiosity and dedication, I’m committed to turning ideas into practical applications while continuously growing my knowledge. When I’m not coding, I love spending time with my friends.
+                <br>Let’s create something amazing together!</br>
               </p>
             </div>
           </div>
@@ -107,9 +109,9 @@
            <!-- Second Project-->
             <div class="details-container color-container">
               <div class="article-container">
-                <img src="./Images/project1.png" alt="Project 2" class="project-img"/>
+                <img src="./Images/project2.png" alt="Project 2" class="project-img"/>
               </div>
-              <h2 class="project-sub-title project-title">Ecommerce Site</h2>
+              <h2 class="project-sub-title project-title">Online Clothing Site</h2>
               <div class="btn-container">
                 <button class="btn btn-color-2 project-btn"onclick="location.href=''"> Github</button>
                 <button class="btn btn-color-2 project-btn"  onclick="location.href=''" >Live Demo </button>
@@ -119,12 +121,12 @@
             <div class="details-container color-container">
               <div class="article-container">
                 <img
-                  src="./Images/project1.png"
+                  src="./Images/project3.png"
                   alt="Project 3"
                   class="project-img"
                 />
               </div>
-              <h2 class="project-sub-title project-title">Calculator</h2>
+              <h2 class="project-sub-title project-title">Memory Matching game</h2>
               <div class="btn-container">
                 <button class="btn btn-color-2 project-btn"onclick="location.href=''" >Github</button>
                 <button class="btn btn-color-2 project-btn" onclick="location.href=''">Live Demo</button>
@@ -138,30 +140,37 @@
       </section>
       
       <section id="contact">
-        
         <h1 class="title">Get in Touch</h1>
-
-            
-            <div class="form-container">
-              <form action="#" onsubmit="return validateForm()">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-    
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-    
-                <label for="message">Message</label>
-                <textarea id="message" name="message" required></textarea>
-    
-                <button  class="btn btn-color-2 contact-btn" type="submit">Send Message</button>
-            </form>
-            </div>
-           
-            
-          </div>
+        <div class="form-container">
          
-       
-      </section>
+            <?php if ($formSuccess): ?>
+              <div class="alert alert-success">
+                Thank you for your message! We'll get back to you soon.
+              </div> 
+            <?php endif; ?>
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>#contact" method="post" >
+              <!-- onsubmit="return validateForm()" -->
+              <h2>Contact Me</h2>
+              <label for="name">Name *</label>
+              <input type="text" id="name" name="name" value="<?php echo $name; ?>" required>
+              <span class="error"><?php echo $nameErr; ?></span>
+    
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" value="<?php echo $email; ?>" required>
+              <span class="error"><?php echo $emailErr; ?></span>
+    
+               <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" value="<?php echo $subject; ?>">
+     
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" rows="5" required><?php echo $message; ?></textarea>
+              <span class="error"><?php echo $messageErr; ?></span>
+    
+              <button class="btn btn-color-2 contact-btn" type="submit">Send Message</button>
+            </form>
+          </div>
+        
+    </section>
       <footer>
         <div class="social-container">
 
