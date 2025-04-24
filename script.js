@@ -5,22 +5,22 @@ function toggleMenu() {
     icon.classList.toggle("open");
   }
 
-  function validateForm() {
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var message = document.getElementById("message").value;
+//   function validateForm() {
+//     var name = document.getElementById("name").value;
+//     var email = document.getElementById("email").value;
+//     var message = document.getElementById("message").value;
 
-    if (name === "" || email === "" || message === "") {
-        alert("Please fill in all fields before submitting.");
-        return false; 
-    }
+//     if (name === "" || email === "" || message === "") {
+//         alert("Please fill in all fields before submitting.");
+//         return false; 
+//     }
 
-    alert("BOOM! Your message has launched into my inbox., " + name + "..Prepare for a reply soon!");
+//     //alert("Your message has been sent." + name );
     
-    document.querySelector("form").reset();
+//     document.querySelector("form").reset();
 
-    return false; 
-}
+//     return false; 
+// }
 
 
   
